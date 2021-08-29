@@ -1,5 +1,6 @@
 import scrapy
 
+
 class CategorySpider(scrapy.Spider):
     name = 'category'
 

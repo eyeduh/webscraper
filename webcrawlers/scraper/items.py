@@ -4,15 +4,14 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-
+from scraper.spiders import category_crawler, product_crawler
 
 class CategoryScraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    name = scrapy.Field()
+    name = scrapy.Field(serialize=str)
     url = scrapy.Field()
     
-
 
 class ProductScraperItem(scrapy.Item):
     # define the fields for your item here like:
@@ -21,4 +20,4 @@ class ProductScraperItem(scrapy.Item):
     brand = scrapy.Field()
     url = scrapy.Field()
     img = scrapy.Field()
-    price = scrapy.Field()
+    price = scrapy.Field(serialize=int)
